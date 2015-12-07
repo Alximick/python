@@ -15,15 +15,12 @@
 def remove_adjacent(nums):
   # +++your code here+++
   alist = []
-  i = 0
   j = 1
   while j < len(nums):
-    if nums[i] != nums[j]:
-      alist.append(nums[i])
-    i = i + 1
+    if nums[j-1] != nums[j]:
+      alist.append(nums[j-1])
     j = j + 1
-  if i < len(nums):
-    alist.append(nums[i])
+  alist.append(nums[-1])
   return alist
 
 
