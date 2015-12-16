@@ -11,7 +11,6 @@ def ordinal(text, encoding='utf-8'):
     # +++your code here+++
     but = ''
     a = []
-    test = '['
     text = text.encode(encoding)
     for i in text:
         a.append(ord(i))
