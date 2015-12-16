@@ -10,12 +10,12 @@ import sys
 def ordinal(text, encoding='utf-8'):
     # +++your code here+++
     but = ''
+    a = []
     test = '['
-    bu = text.encode(encoding)
-    for i in bu:
-        but = str(ord(i))
-        test += but +','+' '
-    return test[0:-2]+']'
+    text = text.encode(encoding)
+    for i in text:
+        a.append(ord(i))
+    return a
 
 def test(got, expected):
     print('{} got: {} expected: {}'.format(
