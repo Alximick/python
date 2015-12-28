@@ -10,9 +10,7 @@ import re
 def is_palindrome(string):
     # +++your code here+++
     string = string.lower()
-    string = string.replace('_','')
-    #print (string)
-    string = re.sub(u'\W+', u'', string)
+    string = re.sub(u'(\W+|_|)', u'', string)
     #print (string)
     if string == string[::-1]:
         return True

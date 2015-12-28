@@ -41,8 +41,6 @@ import sys
 
 def readfile(filename):
   tempdict = {}
-  lines = []
-  lines2 = []
   with open(filename) as f:
     for line in f:
       for word in line.split():
@@ -68,8 +66,8 @@ def print_top(filename):
   def last(a):
     return a[-1]
   d = sorted(d.items(), key = last, reverse = True)
-  for i in range(20):
-    print d[i]
+  for i in d[:20]:
+    print i[0], i[1]
 
 
 # +++your code here+++

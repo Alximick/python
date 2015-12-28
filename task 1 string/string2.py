@@ -46,15 +46,21 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  if len(a) % 2 == 0 and len(b) % 2 == 0:
-    return a[0:len(a)//2] + b[0:len(b)//2] + a[len(a)//2:] + b[len(b)//2:]
-  elif len(a) % 2 == 1 and len(b) % 2 == 1:
-    return a[0:len(a)//2 + 1] + b[0:len(b)//2 + 1] + a[len(a)//2 + 1:] + b[len(b)//2 + 1:]
-  elif len(a) % 2 == 1 and len(b) % 2 == 0:
-    return a[0:len(a)//2 + 1] + b[0:len(b)//2] + a[len(a)//2 + 1:] + b[len(b)//2:]
-  elif len(a) % 2 == 0 and len(b) % 2 == 1:
-    return a[0:len(a)//2] + b[0:len(b)//2 + 1] + a[len(a)//2:] + b[len(b)//2 + 1 :]
-  return 
+  mylenA = len(a)//2
+  mylenB = len(b)//2
+  if len(a) % 2 == 1:
+  	mylenA = len(a)//2 + 1
+  if len(b) % 2 == 1:
+  	mylenB = len(b)//2 + 1
+  #if len(a) % 2 == 0 and len(b) % 2 == 0:
+  #  return a[0:len(a)//2] + b[0:len(b)//2] + a[len(a)//2:] + b[len(b)//2:]
+  #elif len(a) % 2 == 1 and len(b) % 2 == 1:
+  #  return a[0:len(a)//2 + 1] + b[0:len(b)//2 + 1] + a[len(a)//2 + 1:] + b[len(b)//2 + 1:]
+  #elif len(a) % 2 == 1 and len(b) % 2 == 0:
+  #  return a[0:len(a)//2 + 1] + b[0:len(b)//2] + a[len(a)//2 + 1:] + b[len(b)//2:]
+  #elif len(a) % 2 == 0 and len(b) % 2 == 1:
+  #  return a[0:len(a)//2] + b[0:len(b)//2 + 1] + a[len(a)//2:] + b[len(b)//2 + 1 :]
+  return a[:mylenA] + b[:mylenB] + a[mylenA:] + b[mylenB:]
 
 
 # Simple provided test() function used in main() to print
